@@ -38,76 +38,39 @@
 								href="/rms-servlet-web/users/form">Register</a>
 					<c:choose>
 						<c:when test="${user != null}">
-							<a class="mdl-navigation__link" href="/rms-servlet-web/dashboard">Dashboard</a>
 							<a class="mdl-navigation__link" href="/rms-servlet-web/logout">Logout</a>
 						</c:when>
 						<c:otherwise>
 							<a class="mdl-navigation__link" href="/rms-servlet-web/login">Login</a>
-							<%
-								session.invalidate();
-							%>
 						</c:otherwise>
 					</c:choose>
-
-
 				</nav>
 			</div>
 		</header><div class="mdl-layout mdl-js-layout box-center mdl-card">
 		<main class="mdl-layout__content">
 		<div class="mdl-card mdl-shadow--6dp">
 			<div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-				<h2 class="mdl-card__title-text">Registration</h2>
+				<h2 class="mdl-card__title-text">Are you sure to delete User?</h2>
 			</div>
 			<div class="mdl-card__supporting-text">
-				<form action="form" method="post" id="form_reg">
+				<form action="delete" method="post" id="form_reg">
 					<c:if test="${message!=null}">
 						<div class="mdl-textfield mdl-js-textfield">
 							<label>${message}</label>
 						</div>
 					</c:if>
 					<div class="mdl-textfield mdl-js-textfield">
-						<input class="mdl-textfield__input" type="text" id="username"
-							name="username" required="required"/> <label class="mdl-textfield__label"
-							for="username">Username</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield">
 						<input class="mdl-textfield__input" type="password" id="userpass"
 							name="userpass" required="required"/> <label class="mdl-textfield__label"
 							for="userpass">Password</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield">
-						<input class="mdl-textfield__input" type="password" id="conf-userpass"
-							name="conf-userpass" required="required"/> <label class="mdl-textfield__label"
-							for="conf-userpass">Confirm Password</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield">
-						<input class="mdl-textfield__input" type="text" id="name"
-							name="name" required="required"/> <label class="mdl-textfield__label"
-							for="userpass">Name</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield">
-						<label for="gender">Gender: </label>
-						<select id="gender"	name="gender">
-							<option value="Male">Male</option>
-							<option value="Female">Female</option>
-						</select>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield">
-						<input class="mdl-textfield__input" type="email" id="email"
-							name="email"/> <label class="mdl-textfield__label" for="email">Email</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield">
-						<input class="mdl-textfield__input" type="text" id="address"
-							name="address"/> <label class="mdl-textfield__label"
-							for="address">Address</label>
 					</div>
 				</form>
 			</div>
 			<div class="mdl-card__actions mdl-card--border">
 				<button type="submit" form="form_reg"
-					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Save</button>
-				<a href="../"><button type="button"
-						class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Back</button></a>
+					class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Yes</button>
+				<a href="/rms-servlet-web/dashboard"><button type="button"
+						class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">No</button></a>
 			</div>
 		</div>
 		</main>

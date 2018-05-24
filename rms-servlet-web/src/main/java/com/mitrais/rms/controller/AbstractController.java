@@ -6,6 +6,7 @@ public abstract class AbstractController extends HttpServlet
 {
     public static final String VIEW_PREFIX = "/WEB-INF/jsp";
     public static final String VIEW_SUFFIX = ".jsp";
+//    public static final String VIEW_INDEX_PREFIX = "/WEB_INF";
 
     protected String getTemplatePath(String path)
     {
